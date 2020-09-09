@@ -1,0 +1,3 @@
+
+struct Network { }
+struct HTTP { }
