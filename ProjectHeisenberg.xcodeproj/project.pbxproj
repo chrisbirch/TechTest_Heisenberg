@@ -32,6 +32,9 @@
 		E947FE662508EFE100FE8D11 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947FE652508EFE100FE8D11 /* CharacterService.swift */; };
 		E947FE692508F10000FE8D11 /* TestDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947FE682508F10000FE8D11 /* TestDataHelper.swift */; };
 		E988CD3E2508F247006F1D56 /* MockCharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD3D2508F247006F1D56 /* MockCharacterService.swift */; };
+		E988CD4025090EC4006F1D56 /* SingleCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = E988CD3F2508F5C8006F1D56 /* SingleCharacter.json */; };
+		E988CD42250916E4006F1D56 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD41250916E4006F1D56 /* ModelViewController.swift */; };
+		E988CD46250918E0006F1D56 /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD45250918E0006F1D56 /* ListTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,8 @@
 		E947FE682508F10000FE8D11 /* TestDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataHelper.swift; sourceTree = "<group>"; };
 		E988CD3D2508F247006F1D56 /* MockCharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterService.swift; sourceTree = "<group>"; };
 		E988CD3F2508F5C8006F1D56 /* SingleCharacter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleCharacter.json; sourceTree = "<group>"; };
+		E988CD41250916E4006F1D56 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
+		E988CD45250918E0006F1D56 /* ListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,7 @@
 				E947FE3B2508DDDC00FE8D11 /* Namespaces.swift */,
 				E947FE392508DDD700FE8D11 /* Types.swift */,
 				E947FE4D2508DF5F00FE8D11 /* DependencyInjection.swift */,
+				E988CD41250916E4006F1D56 /* ModelViewController.swift */,
 				E947FE532508E15A00FE8D11 /* BaseViews */,
 				E947FE422508DE3700FE8D11 /* Extensions */,
 				E947FE3D2508DDF600FE8D11 /* View Controllers */,
@@ -157,8 +163,8 @@
 		E947FE3D2508DDF600FE8D11 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E947FE3E2508DDF600FE8D11 /* DetailViewController.swift */,
-				E947FE3F2508DDF600FE8D11 /* ListViewController.swift */,
+				E988CD44250918DA006F1D56 /* Detail */,
+				E988CD43250918D4006F1D56 /* List */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +223,23 @@
 				E947FE682508F10000FE8D11 /* TestDataHelper.swift */,
 			);
 			path = "Test Data";
+			sourceTree = "<group>";
+		};
+		E988CD43250918D4006F1D56 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E988CD45250918E0006F1D56 /* ListTableCell.swift */,
+				E947FE3F2508DDF600FE8D11 /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		E988CD44250918DA006F1D56 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E947FE3E2508DDF600FE8D11 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E988CD4025090EC4006F1D56 /* SingleCharacter.json in Resources */,
 				E947FE552508ED1E00FE8D11 /* AllCharacters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +346,9 @@
 			files = (
 				E947FE482508DE5200FE8D11 /* UIEdgeInsets+Extensions.swift in Sources */,
 				E947FE4C2508DE5200FE8D11 /* Edges.swift in Sources */,
+				E988CD46250918E0006F1D56 /* ListTableCell.swift in Sources */,
 				E947FE522508DFEF00FE8D11 /* UIRectEdges+Helper.swift in Sources */,
+				E988CD42250916E4006F1D56 /* ModelViewController.swift in Sources */,
 				E947FE4B2508DE5200FE8D11 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				E947FE412508DDF600FE8D11 /* ListViewController.swift in Sources */,
 				E947FE372508DDB600FE8D11 /* NetworkService.swift in Sources */,

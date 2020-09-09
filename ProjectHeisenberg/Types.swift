@@ -36,3 +36,7 @@ struct Axis: OptionSet {
         return self == axis ? isHandler?() : isntHandler?()
     }
 }
+
+enum DownloadError: Error {
+    case jsonParsingError
+}

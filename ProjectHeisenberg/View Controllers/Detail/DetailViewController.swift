@@ -1,6 +1,6 @@
 import UIKit
 
-class ListViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     struct Constants {
         
