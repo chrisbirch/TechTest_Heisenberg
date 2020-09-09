@@ -4,6 +4,7 @@ import XCTest
 
 class UnitTestCase: XCTestCase {
     var mockNetworkService: MockNetworkService!
+    var mockCharacterService: MockCharacterService!
     
     // MARK: - Test lifecycle
     
@@ -18,6 +19,10 @@ class UnitTestCase: XCTestCase {
             mockNetworkService = mock
             Injected.networkService = mock
         }
+        if let mock = createMockCharacterService() {
+            mockCharacterService = mock
+            Injected.characterService = mock
+        }
     }
     
     // MARK: - Subclassing
@@ -25,7 +30,7 @@ class UnitTestCase: XCTestCase {
     func createMockNetworkService() -> MockNetworkService? {
         return MockNetworkService()
     }
-    func createMockCharacterService() -> MockNetworkService? {
-        return MockNetworkService()
+    func createMockCharacterService() -> MockCharacterService? {
+        return mockCharacterService()
     }
 }
