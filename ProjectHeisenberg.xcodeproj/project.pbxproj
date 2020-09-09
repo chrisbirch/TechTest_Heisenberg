@@ -35,6 +35,15 @@
 		E988CD4025090EC4006F1D56 /* SingleCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = E988CD3F2508F5C8006F1D56 /* SingleCharacter.json */; };
 		E988CD42250916E4006F1D56 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD41250916E4006F1D56 /* ModelViewController.swift */; };
 		E988CD46250918E0006F1D56 /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD45250918E0006F1D56 /* ListTableCell.swift */; };
+		E988CD4825091C99006F1D56 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD4725091C99006F1D56 /* ImageView.swift */; };
+		E988CD4A25091CD1006F1D56 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD4925091CD1006F1D56 /* View.swift */; };
+		E988CD4C25091FCA006F1D56 /* BusyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD4B25091FCA006F1D56 /* BusyView.swift */; };
+		E988CD4E250922CA006F1D56 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD4D250922C9006F1D56 /* SearchBar.swift */; };
+		E988CD50250923FA006F1D56 /* SeasonFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD4F250923FA006F1D56 /* SeasonFilterBar.swift */; };
+		E988CD5325092494006F1D56 /* Button+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD5125092493006F1D56 /* Button+Content.swift */; };
+		E988CD5425092494006F1D56 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD5225092493006F1D56 /* Button.swift */; };
+		E988CD56250924B3006F1D56 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD55250924B3006F1D56 /* Control.swift */; };
+		E988CD58250924C9006F1D56 /* ButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD57250924C9006F1D56 /* ButtonGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +89,15 @@
 		E988CD3F2508F5C8006F1D56 /* SingleCharacter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleCharacter.json; sourceTree = "<group>"; };
 		E988CD41250916E4006F1D56 /* ModelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
 		E988CD45250918E0006F1D56 /* ListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
+		E988CD4725091C99006F1D56 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		E988CD4925091CD1006F1D56 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E988CD4B25091FCA006F1D56 /* BusyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusyView.swift; sourceTree = "<group>"; };
+		E988CD4D250922C9006F1D56 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E988CD4F250923FA006F1D56 /* SeasonFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonFilterBar.swift; sourceTree = "<group>"; };
+		E988CD5125092493006F1D56 /* Button+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+Content.swift"; sourceTree = "<group>"; };
+		E988CD5225092493006F1D56 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		E988CD55250924B3006F1D56 /* Control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
+		E988CD57250924C9006F1D56 /* ButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +203,16 @@
 		E947FE532508E15A00FE8D11 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				E988CD57250924C9006F1D56 /* ButtonGroup.swift */,
+				E988CD55250924B3006F1D56 /* Control.swift */,
+				E988CD5225092493006F1D56 /* Button.swift */,
+				E988CD5125092493006F1D56 /* Button+Content.swift */,
+				E988CD4D250922C9006F1D56 /* SearchBar.swift */,
+				E988CD4B25091FCA006F1D56 /* BusyView.swift */,
+				E988CD4925091CD1006F1D56 /* View.swift */,
+				E988CD4725091C99006F1D56 /* ImageView.swift */,
 				E947FE4F2508DFD400FE8D11 /* StackView.swift */,
+				E988CD4F250923FA006F1D56 /* SeasonFilterBar.swift */,
 			);
 			path = BaseViews;
 			sourceTree = "<group>";
@@ -345,22 +372,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E947FE482508DE5200FE8D11 /* UIEdgeInsets+Extensions.swift in Sources */,
+				E988CD56250924B3006F1D56 /* Control.swift in Sources */,
+				E988CD5325092494006F1D56 /* Button+Content.swift in Sources */,
+				E988CD4825091C99006F1D56 /* ImageView.swift in Sources */,
 				E947FE4C2508DE5200FE8D11 /* Edges.swift in Sources */,
 				E988CD46250918E0006F1D56 /* ListTableCell.swift in Sources */,
 				E947FE522508DFEF00FE8D11 /* UIRectEdges+Helper.swift in Sources */,
+				E988CD50250923FA006F1D56 /* SeasonFilterBar.swift in Sources */,
 				E988CD42250916E4006F1D56 /* ModelViewController.swift in Sources */,
 				E947FE4B2508DE5200FE8D11 /* NSLayoutConstraint+Extensions.swift in Sources */,
 				E947FE412508DDF600FE8D11 /* ListViewController.swift in Sources */,
 				E947FE372508DDB600FE8D11 /* NetworkService.swift in Sources */,
+				E988CD4E250922CA006F1D56 /* SearchBar.swift in Sources */,
+				E988CD58250924C9006F1D56 /* ButtonGroup.swift in Sources */,
 				E947FE3C2508DDDC00FE8D11 /* Namespaces.swift in Sources */,
 				E947FE132508DD7100FE8D11 /* AppDelegate.swift in Sources */,
 				E947FE3A2508DDD700FE8D11 /* Types.swift in Sources */,
+				E988CD5425092494006F1D56 /* Button.swift in Sources */,
+				E988CD4A25091CD1006F1D56 /* View.swift in Sources */,
 				E947FE492508DE5200FE8D11 /* UIView+Constraints.swift in Sources */,
 				E947FE402508DDF600FE8D11 /* DetailViewController.swift in Sources */,
 				E947FE4E2508DF5F00FE8D11 /* DependencyInjection.swift in Sources */,
 				E947FE582508EDF100FE8D11 /* Character.swift in Sources */,
 				E947FE4A2508DE5200FE8D11 /* UIView+Extensions.swift in Sources */,
 				E947FE502508DFD400FE8D11 /* StackView.swift in Sources */,
+				E988CD4C25091FCA006F1D56 /* BusyView.swift in Sources */,
 				E947FE662508EFE100FE8D11 /* CharacterService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

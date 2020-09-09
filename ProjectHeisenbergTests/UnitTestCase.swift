@@ -31,6 +31,6 @@ class UnitTestCase: XCTestCase {
         return MockNetworkService()
     }
     func createMockCharacterService() -> MockCharacterService? {
-        return mockCharacterService()
+        return MockCharacterService()
     }
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-open class StackView: UIStackView {
+class StackView: UIStackView {
     
 }
 

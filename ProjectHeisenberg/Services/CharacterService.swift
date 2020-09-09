@@ -26,8 +26,8 @@ extension Character {
                 case .success(let response):
                     do {
                         var characters = try JSONDecoder().decode([Character].self, from: response.data)
-                        
-                        if let filterOnNameText = request.searchForName {
+                        characters = characters.filter {$0.category != .betterCallSaul}
+                        if let filterOnNameText = request.searchForName?.lowercased(), !filterOnNameText.isEmpty {
                             characters = characters.filter { $0.name.lowercased().contains(filterOnNameText)}
                         }
                         

@@ -38,6 +38,9 @@ class ModelViewController<ViewModel>: UIViewController, ViewControllerDisplayLog
     init(model: ViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.model = model
+        self.model?.viewController = self
+        self.model?.controllerConnected()
+        self.updateFromModel()
     }
     
     required init?(coder: NSCoder) {

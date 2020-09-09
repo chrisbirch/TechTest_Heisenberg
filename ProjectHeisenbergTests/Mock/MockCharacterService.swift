@@ -3,7 +3,7 @@ import Foundation
 import XCTest
 
 class MockCharacterService: CharacterService {
-    static let dummyCharacter = Character.Character(charID: 0, name: "Mr Test", occupation: ["Tester"], img: "http://anImage.com", status: .alive, nickname: "Mr Nickname", appearance: [1,2])
+    static let dummyCharacter = Character.Character(charID: 0, name: "Mr Test", occupation: ["Tester"], img: "http://anImage.com", category: .breakingBad, status: .alive, portrayed: "Mr portray", nickname: "Mr Nickname", appearance: [1,2])
     var returnResult: Result<[Character.Character], Error> = .success(
         [dummyCharacter]
     )
