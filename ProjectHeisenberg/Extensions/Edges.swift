@@ -6,7 +6,7 @@ extension UIRectEdge {
     static let centerY = UIRectEdge(rawValue: 1 << 100)
 }
 
-public class Edges {
+class Edges {
     class Edge {
         let edge: UIRectEdge
         var inset: CGFloat?

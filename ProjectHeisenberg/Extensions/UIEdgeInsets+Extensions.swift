@@ -64,7 +64,7 @@ extension UIEdgeInsets {
     }
 }
 
-public func uiedges(l: CGFloat? = nil, r: CGFloat? = nil, t: CGFloat? = nil, b: CGFloat? = nil) -> UIEdgeInsets {
+func uiedges(l: CGFloat? = nil, r: CGFloat? = nil, t: CGFloat? = nil, b: CGFloat? = nil) -> UIEdgeInsets {
     var edges = UIEdgeInsets.zero
     if let left = l {  edges.left = left }
     if let right = r { edges.right = right }
@@ -73,11 +73,11 @@ public func uiedges(l: CGFloat? = nil, r: CGFloat? = nil, t: CGFloat? = nil, b: 
     return edges
 }
 
-public func uiedges(_ uniform: CGFloat) -> UIEdgeInsets {
+func uiedges(_ uniform: CGFloat) -> UIEdgeInsets {
     return .init(uniform: uniform)
 }
 
-public func uiedges(h: CGFloat? = nil, v: CGFloat? = nil) -> UIEdgeInsets {
+func uiedges(h: CGFloat? = nil, v: CGFloat? = nil) -> UIEdgeInsets {
     var edges = UIEdgeInsets.zero
     if let horizontal = h { edges = edges.horizontal(horizontal) }
     if let vertical = v { edges = edges.vertical(vertical) }
