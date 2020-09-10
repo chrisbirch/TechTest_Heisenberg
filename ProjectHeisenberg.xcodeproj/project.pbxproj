@@ -44,6 +44,10 @@
 		E988CD5425092494006F1D56 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD5225092493006F1D56 /* Button.swift */; };
 		E988CD56250924B3006F1D56 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD55250924B3006F1D56 /* Control.swift */; };
 		E988CD58250924C9006F1D56 /* ButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD57250924C9006F1D56 /* ButtonGroup.swift */; };
+		E988CD5A2509FF4E006F1D56 /* DetailViewController+Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD592509FF4E006F1D56 /* DetailViewController+Demo.swift */; };
+		E988CD5C250A016B006F1D56 /* InfoFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CD5B250A016B006F1D56 /* InfoFieldView.swift */; };
+		E9E32AAF250A04E400684260 /* AlignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E32AAE250A04E300684260 /* AlignmentView.swift */; };
+		E9E32AB2250A127800684260 /* SeasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E32AB0250A0E4000684260 /* SeasonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E947FE0F2508DD7100FE8D11 /* ProjectHeisenberg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectHeisenberg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E947FE0F2508DD7100FE8D11 /* Heisenberg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heisenberg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E947FE122508DD7100FE8D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E947FE1B2508DD7200FE8D11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E947FE1E2508DD7200FE8D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +102,10 @@
 		E988CD5225092493006F1D56 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		E988CD55250924B3006F1D56 /* Control.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		E988CD57250924C9006F1D56 /* ButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonGroup.swift; sourceTree = "<group>"; };
+		E988CD592509FF4E006F1D56 /* DetailViewController+Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Demo.swift"; sourceTree = "<group>"; };
+		E988CD5B250A016B006F1D56 /* InfoFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFieldView.swift; sourceTree = "<group>"; };
+		E9E32AAE250A04E300684260 /* AlignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentView.swift; sourceTree = "<group>"; };
+		E9E32AB0250A0E4000684260 /* SeasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +138,7 @@
 		E947FE102508DD7100FE8D11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E947FE0F2508DD7100FE8D11 /* ProjectHeisenberg.app */,
+				E947FE0F2508DD7100FE8D11 /* Heisenberg.app */,
 				E947FE252508DD7200FE8D11 /* ProjectHeisenbergTests.xctest */,
 			);
 			name = Products;
@@ -203,6 +211,8 @@
 		E947FE532508E15A00FE8D11 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				E988CD5B250A016B006F1D56 /* InfoFieldView.swift */,
+				E9E32AAE250A04E300684260 /* AlignmentView.swift */,
 				E988CD57250924C9006F1D56 /* ButtonGroup.swift */,
 				E988CD55250924B3006F1D56 /* Control.swift */,
 				E988CD5225092493006F1D56 /* Button.swift */,
@@ -264,7 +274,9 @@
 		E988CD44250918DA006F1D56 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E9E32AB0250A0E4000684260 /* SeasonView.swift */,
 				E947FE3E2508DDF600FE8D11 /* DetailViewController.swift */,
+				E988CD592509FF4E006F1D56 /* DetailViewController+Demo.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -286,7 +298,7 @@
 			);
 			name = ProjectHeisenberg;
 			productName = ProjectHeisenberg;
-			productReference = E947FE0F2508DD7100FE8D11 /* ProjectHeisenberg.app */;
+			productReference = E947FE0F2508DD7100FE8D11 /* Heisenberg.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E947FE242508DD7200FE8D11 /* ProjectHeisenbergTests */ = {
@@ -386,6 +398,8 @@
 				E988CD4E250922CA006F1D56 /* SearchBar.swift in Sources */,
 				E988CD58250924C9006F1D56 /* ButtonGroup.swift in Sources */,
 				E947FE3C2508DDDC00FE8D11 /* Namespaces.swift in Sources */,
+				E9E32AAF250A04E400684260 /* AlignmentView.swift in Sources */,
+				E988CD5C250A016B006F1D56 /* InfoFieldView.swift in Sources */,
 				E947FE132508DD7100FE8D11 /* AppDelegate.swift in Sources */,
 				E947FE3A2508DDD700FE8D11 /* Types.swift in Sources */,
 				E988CD5425092494006F1D56 /* Button.swift in Sources */,
@@ -394,7 +408,9 @@
 				E947FE402508DDF600FE8D11 /* DetailViewController.swift in Sources */,
 				E947FE4E2508DF5F00FE8D11 /* DependencyInjection.swift in Sources */,
 				E947FE582508EDF100FE8D11 /* Character.swift in Sources */,
+				E9E32AB2250A127800684260 /* SeasonView.swift in Sources */,
 				E947FE4A2508DE5200FE8D11 /* UIView+Extensions.swift in Sources */,
+				E988CD5A2509FF4E006F1D56 /* DetailViewController+Demo.swift in Sources */,
 				E947FE502508DFD400FE8D11 /* StackView.swift in Sources */,
 				E988CD4C25091FCA006F1D56 /* BusyView.swift in Sources */,
 				E947FE662508EFE100FE8D11 /* CharacterService.swift in Sources */,
@@ -557,12 +573,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9TEHV2YQL;
 				INFOPLIST_FILE = ProjectHeisenberg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intensebits.ProjectHeisenberg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Heisenberg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -575,12 +592,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9TEHV2YQL;
 				INFOPLIST_FILE = ProjectHeisenberg/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intensebits.ProjectHeisenberg;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Heisenberg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

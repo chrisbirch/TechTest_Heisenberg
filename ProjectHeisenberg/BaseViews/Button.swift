@@ -96,7 +96,7 @@ import UIKit
     }
     
      func setupForOnState() {
-        backgroundColour(.green)
+        backgroundColour(UIColor.black.withAlphaComponent(0.35))
     }
      func setupForOffState() {
         backgroundColour(.clear)
@@ -232,13 +232,13 @@ import UIKit
         let movedOutside = !isInside && wasInside
         let movedInside = isInside && !wasInside
         if generateEvents.contains(.touchDragEnter) && movedInside {
-            print("Drag Enter")
+            //print("Drag Enter")
             setupForTouchDownState()
             touchDownHaptic()
             
         } else if generateEvents.contains(.touchDragExit) && movedOutside {
             if generateEvents.contains(.touchDragExit) {
-                print("Drag exit")
+                //print("Drag exit")
                 setupForDragExitState()
                 touchDragExitHaptic()
             }
@@ -246,7 +246,7 @@ import UIKit
             //moved around within the frame
             let wasForceTouch = forceTouchDown != nil && touches.first?.force ?? forcePushThreshold - 0.01 >= forcePushThreshold
             if wasForceTouch && generateEvents.contains(.touchDownForce) {
-                print("Force touch")
+                //print("Force touch")
                 isForceTouch = true
                 onForceTouchDown()
                 touchDownHaptic()
@@ -258,7 +258,7 @@ import UIKit
     
     override  func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print("Touches Ended")
+        //print("Touches Ended")
         guard !isForceTouch else {
             setupForNormalState()
             isForceTouch = false
@@ -266,14 +266,14 @@ import UIKit
         }
         guard isTouchInside(touches.first) else {
             if generateEvents.contains(.touchUp) {
-                print("Touch up outside")
+                //print("Touch up outside")
                 onTouchUp()
                 touchUpHaptic()
             }
             return
         }
         if generateEvents.contains(.touchUpInside) {
-            print("Touch up inside")
+            //print("Touch up inside")
             onTouchUpInside()
             touchUpInsideHaptic()
         }

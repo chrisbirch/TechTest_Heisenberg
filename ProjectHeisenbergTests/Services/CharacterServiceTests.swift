@@ -36,7 +36,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_callAPI_whenHTTP200_thenCorrectNumberOfCharactersAreDecodedFromJSONAndReturned() throws {
         setupNetworkLayerWithAllCharactersMock()
         let expect = expectation(description: "Characters are downloaded and decoded")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: nil, filterBySeason: nil), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: nil, filterBySeason: nil), { result in
             switch result {
             case .success(let characters):
                 XCTAssertEqual(characters.count, 63)
@@ -52,7 +52,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_callAPI_whenHTTP200_thenOnlyBreakingBadCharactersAreReturned() throws {
         setupNetworkLayerWithAllCharactersMock()
         let expect = expectation(description: "Breaking bad chars only")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: nil, filterBySeason: nil), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: nil, filterBySeason: nil), { result in
             switch result {
             case .success(let characters):
                 XCTAssertEqual(characters.count, 57)
@@ -68,7 +68,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_callAPI_whenHTTP200AndReturnsSingleCharacter_thenCharacterIsCorrectlyDecoded() throws {
         setupNetworkLayerWithSingleCharacterMock()
         let expect = expectation(description: "Character is downloaded and decoded")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: nil, filterBySeason: nil), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: nil, filterBySeason: nil), { result in
             switch result {
             case .success(let characters):
                 guard let character = characters.first else {
@@ -95,7 +95,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_callAPI_whenOtherThanHTTP200_thenErrorIsThrown() throws {
         setupNetworkLayerWithError()
         let expect = expectation(description: "Network error is returned")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: nil, filterBySeason: nil), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: nil, filterBySeason: nil), { result in
             switch result {
             case .success:
                 XCTFail("Should not have failed!")
@@ -110,7 +110,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_userFiltersOnSeason_thenOnlyCharactersFromSelectedSeasonAreReturned() throws {
         setupNetworkLayerWithAllCharactersMock()
         let expect = expectation(description: "Characters from filtered season are downloaded and decoded")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: nil, filterBySeason: [2]), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: nil, filterBySeason: [2]), { result in
             switch result {
             case .success(let characters):
                 XCTAssertEqual(characters.count, 36)
@@ -124,7 +124,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_userSearchesForCharacterName_thenCorrectCharacterIsReturned() throws {
         setupNetworkLayerWithAllCharactersMock()
         let expect = expectation(description: "Only characters whose names match are returned")
-        sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: "walt", filterBySeason: nil), { result in
+        sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: "walt", filterBySeason: nil), { result in
             switch result {
             case .success(let characters):
                 guard characters.count == 2 else {
@@ -146,7 +146,7 @@ class CharacterServiceTests: UnitTestCase {
     func test_userSearchesForCharacterNameUppercased_thenCorrectCharacterIsReturned() throws {
            setupNetworkLayerWithAllCharactersMock()
            let expect = expectation(description: "Only characters whose names match are returned")
-           sut.retrieveCharacters(.init(returnFromCacheIfAvaiable: false, searchForName: "WALT", filterBySeason: nil), { result in
+           sut.retrieveCharacters(.init(returnFromCacheIfAvailable: false, searchForName: "WALT", filterBySeason: nil), { result in
                switch result {
                case .success(let characters):
                    guard characters.count == 2 else {

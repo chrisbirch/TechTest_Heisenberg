@@ -7,9 +7,15 @@ protocol CharacterService {
 extension Character {
     typealias CharacterRetrievalHandler = Handler<Result<[Character], Error>>
     struct CharacterRequest {
-        let returnFromCacheIfAvaiable: Bool
+        let returnFromCacheIfAvailable: Bool
         let searchForName: String?
         let filterBySeason: [Int]?
+        
+        init(returnFromCacheIfAvailable: Bool, searchForName: String? = nil, filterBySeason: [Int]? = nil) {
+            self.returnFromCacheIfAvailable = returnFromCacheIfAvailable
+            self.searchForName = searchForName
+            self.filterBySeason = filterBySeason
+        }
     }
     class Service: CharacterService {
         struct Contstants {
@@ -19,7 +25,7 @@ extension Character {
         }
         func retrieveCharacters(_ request: CharacterRequest, _ completion: @escaping CharacterRetrievalHandler) {
             let network = Injected.networkService
-            let cachePolicy: NSURLRequest.CachePolicy = request.returnFromCacheIfAvaiable ? .returnCacheDataElseLoad : .reloadIgnoringLocalAndRemoteCacheData
+            let cachePolicy: NSURLRequest.CachePolicy = request.returnFromCacheIfAvailable ? .returnCacheDataElseLoad : .reloadIgnoringLocalAndRemoteCacheData
             let urlRequest = URLRequest(url: Contstants.Endpoints.character, cachePolicy: cachePolicy, timeoutInterval: 60)
             network?.data(request: urlRequest, { result in
                 switch result {

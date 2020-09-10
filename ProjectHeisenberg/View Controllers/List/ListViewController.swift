@@ -5,6 +5,7 @@ class ListViewControllerModel: ViewControllerModel {
     var filteredBySeason: [Int]?
     var searchForName: String?
     
+    
     override func controllerConnected() {
         filteredBySeason = nil
         searchForName = nil
@@ -13,7 +14,7 @@ class ListViewControllerModel: ViewControllerModel {
     
     func listCharacters(returnFromCache: Bool = true) {
         let characterService = Injected.characterService!
-        let request = Character.CharacterRequest(returnFromCacheIfAvaiable: returnFromCache, searchForName: searchForName, filterBySeason: filteredBySeason)
+        let request = Character.CharacterRequest(returnFromCacheIfAvailable: returnFromCache, searchForName: searchForName, filterBySeason: filteredBySeason)
         characterService.retrieveCharacters(request) {[weak self] result in
             guard let self = self else { return }
             self.characters = []
@@ -32,9 +33,11 @@ class ListViewControllerModel: ViewControllerModel {
     
 }
 class ListViewController: ModelViewController<ListViewControllerModel> {
-    let backgroundImageView = ImageView(UIImage(named: "BackgroundImage")!).content(.scaleAspectFill)
+     let backgroundImageView = ImageView(UIImage(named: "BackgroundImage")!).content(.scaleAspectFill)
     let topBarView = View()
     let tableView = UITableView()
+    let busyView = BusyView()
+        .backgroundColour(UIColor.black.withAlphaComponent(0.8))
     lazy var searchBar = SearchBar(placeholder: "Enter character name")
         .textChanged {[unowned self] text in
             guard let model = self.model else { return }
@@ -50,7 +53,7 @@ class ListViewController: ModelViewController<ListViewControllerModel> {
         searchBar,  seasonFilterBar
     ])
 
-    private lazy var stackView = StackView(.vertical, [
+    private lazy var stackView = StackView(.vertical, spacing: 0, [
         topBarView,  tableView
     ])
 
@@ -65,13 +68,55 @@ class ListViewController: ModelViewController<ListViewControllerModel> {
         tableView.backgroundView = nil
         tableView.backgroundColor = .clear
         topBarView.add(view: searchControlStack)
-        view.add(view: backgroundImageView)
-        view.add(view: stackView, .rectSafe)
+        view.add(view: backgroundImageView, Edges.rect.bottom(-40))
+        view.add(view: stackView, .topLeftRightSafe)
+        view.add(view: busyView)
+       
+        stackView.vConstrain(.bottom, to: view, .bottom)
+        let barBackgroundColour = UIColor(red: 0.071, green: 0.093, blue: 0.027, alpha: 1)
+        let barForegroundColour = UIColor.white
+        searchBar.barTintColor = barBackgroundColour
+        searchBar.tintColor = barForegroundColour
+        searchBar.searchTextField.textColor = barForegroundColour
+        navigationController?.navigationBar.barTintColor = barBackgroundColour
+        navigationController?.navigationBar.tintColor = barForegroundColour
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: barForegroundColour]
+        searchBar.beganEditing = {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+            tapGesture.cancelsTouchesInView = false
+            self.view.addGestureRecognizer(tapGesture)
+        }
+        searchBar.endedEditing = {
+            self.searchBar.resignFirstResponder()
+        }
+        busyView.retryHandler = {[unowned self] in
+            self.busyView.state = .busy
+            self.busyView.isHidden = false
+            self.model?.listCharacters(returnFromCache: false)
+        }
+        busyView.loadingText = "Please wait - Loading content"
+        
+    }
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        true
+    }
+    override func updateFromModel() {
+        guard let model = model else { return }
+        if let error = model.error {
+            busyView.state = .retry
+            busyView.isHidden = false
+        } else {
+            tableView.reloadData()
+            if model.characters.isEmpty == false {
+                busyView.isHidden = true
+            }
+        }
+        
     }
     
-    override func updateFromModel() {
-        guard model != nil else { return }
-        tableView.reloadData()
+    @objc func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+        view.gestureRecognizers?.forEach { view.removeGestureRecognizer($0) }
     }
 }
 
@@ -97,3 +142,5 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         present(vc, animated: true)
     }
 }
+
+

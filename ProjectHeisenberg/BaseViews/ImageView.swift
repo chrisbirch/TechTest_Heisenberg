@@ -14,6 +14,16 @@ class ImageView: View {
         add(view: view, .rectMargins)
     }
     
+    
+    @discardableResult func addBlur(_ style: UIBlurEffect.Style = .dark) -> Self
+    {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        add(view: blurEffectView)
+        return self
+    }
+    
     @discardableResult func setImage(size: CGSize?, _ margins: UIEdgeInsets = .zero, forceImageSizeConstraints: Bool = false) -> Self {
         layoutMargins = margins
         _intrinsicContentSize = size

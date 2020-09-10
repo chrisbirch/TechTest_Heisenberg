@@ -15,6 +15,7 @@ class SeasonFilterBar: View {
     
     override func createSubviews() {
         super.createSubviews()
+        layoutMargins = .init(uniform: 2)
         var buttons = [Button]()
         for i in 1...5 {
             let button = Button(title: "\(i)")
@@ -32,16 +33,16 @@ class SeasonFilterBar: View {
         }
         lbTitle.text = "Select season"
         lbTitle.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
-        lbTitle.textColor = .white
+        lbTitle.textColor = UIColor.white.withAlphaComponent(0.8)
         lbTitle.textAlignment = .center
         let buttonContainer = View()
-        buttonContainer.add(view: buttonStackView, Edges(2))
+        buttonContainer.add(view: buttonStackView)
         buttonContainer.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         stackView.add([lbTitle, buttonStackView])
         buttonStackView.add(buttons)
         buttonGroup = ButtonGroup("Seasons", buttons)
         buttonGroup.allowsMultipleSelection = true
-        add(view: stackView)
+        add(view: stackView, .rectMargins)
     }
     
     override var intrinsicContentSize: CGSize {

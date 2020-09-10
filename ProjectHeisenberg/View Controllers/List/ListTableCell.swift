@@ -35,7 +35,7 @@ extension ListViewController {
         private func createSubViews() {
             add(view: stackView)
             lbName.textColor = .white
-            backgroundColor = UIColor.black.withAlphaComponent(0.9)
+            backgroundColor = UIColor.black.withAlphaComponent(0.75)
             imgThumb.contentMode = .scaleAspectFit
             
         }
