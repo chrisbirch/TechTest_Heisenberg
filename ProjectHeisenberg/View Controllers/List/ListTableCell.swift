@@ -9,7 +9,7 @@ extension ListViewController {
             .setImage(size: CGSize(width: 45, height: 45), .init(top: 4, left: 4, bottom: 4, right: 4), forceImageSizeConstraints: true)
             
         let lbName = UILabel()
-        private lazy var stackView = StackView(.horizontal, spacing: 10, [
+        private lazy var stackView = StackView(.horizontal, alignment: .center, spacing: 10, [
             imgThumb,
             lbName
         ])
