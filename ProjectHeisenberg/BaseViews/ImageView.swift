@@ -66,28 +66,30 @@ class ImageView: View {
             view.contentMode = newValue
         }
     }
-    
+    private var downloadTask: URLSessionDataTask?
+    private let urlSession = URLSession(configuration: .default, delegate: nil, delegateQueue: nil)
     var imageURL: URL? {
         didSet {
             guard let imageURL = imageURL else {
                 return
             }
-            
-            doAsync {[weak self] complete in
-                do {
-                    guard let self = self else { return }
-                    let imageData = try Data(contentsOf: imageURL)
-                    let image = UIImage(data: imageData)
-                    //do on main thread
-                    delayedCall {
-                        self.view.image = image
+            downloadTask?.cancel()
+            showBusyView()
+            let request = URLRequest(url: imageURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 60)
+            downloadTask = urlSession.dataTask(with: request, completionHandler: {(data, urlResponse, error) in
+                if let data = data {
+                    if let image = UIImage(data: data) {
+                        //do on main thread
+                        delayedCall {
+                            self.view.image = image
+                        }
                     }
-                    
-                } catch {
-                    Swift.print(error)
                 }
-                complete()
-            }
+                delayedCall {
+                    self.hideBusyView()
+                }
+            })
+            downloadTask?.resume()
         }
     }
     
