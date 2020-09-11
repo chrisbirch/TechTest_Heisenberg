@@ -88,7 +88,7 @@ class DetailViewController: ModelViewController<DetailViewControllerModel> {
         imgThumb.image = UIImage(named: "Placeholder")
         imgThumb.imageURL = URL(string: model.img)
         headerView.contentView.text = model.name
-        occupationView.contentView.text = model.occupation.joined(separator: ",")
+        occupationView.contentView.text = model.occupation.joined(separator: ", ")
         statusView.contentView.text = model.status.rawValue
         nicknameView.contentView.text = model.nickname
         seasonsView.seasons = model.appearance
